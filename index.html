@@ -1,0 +1,404 @@
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+  @font-face {
+   font-family: 'Avenir Book';
+   src: url("./fonts/Avenir_Book.ttf"); /* File to be stored at your site */
+   }
+
+  body {
+    font-family: "Avenir Book", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    font-size:14px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+  }
+  h1 {
+    font-weight:300;
+  }
+  h2 {
+    font-weight:300;
+  }
+
+  p {
+    font-weight:300;
+    line-height: 1.4;
+  }
+
+  code {
+    font-size: 0.8rem;
+    margin: 0 0.2rem;
+    padding: 0.5rem 0.8rem;
+    white-space: nowrap;
+    background: #efefef;
+    border: 1px solid #d3d3d3;
+    color: #000000;
+    border-radius: 3px;
+  }
+
+  pre > code {
+    display: block;
+    white-space: pre;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+  }
+
+  pre.prettyprint > code {
+    border: none;
+  }
+
+
+  .container {
+        display: flex;
+        align-items: center;
+        justify-content: center
+  }
+  .image {
+        flex-basis: 40%
+  }
+  .text {
+        padding-left: 20px;
+        padding-right: 20px;
+  }
+  .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 10px;
+      background-color: #FFFFFF;
+      padding: 10px;
+}
+
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.rounded {
+    border: 0px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+
+  }
+
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #208799;
+  }
+
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .vert-cent {
+    position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+</style>
+
+  <title>KEP</title>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1093.0" data-gr-ext-installed="">
+  <br>
+  <center>
+  <span style="font-size:36px">Knowledge-enhanced Visual-Language Pretraining for Computational Pathology</span><br><br><br>
+  </center>
+  <table align="center" width="800px">
+            <tbody><tr>
+                    <td align="center" width="175px">
+              <center>
+                <span style="font-size:16px">Xiao Zhou</a><sup>1</sup></span>
+                </center>
+                </td>
+                    <td align="center" width="225px">
+              <center>
+                <span style="font-size:16px">Xiaoman Zhang</a><sup>1,2</sup></span>
+                </center>
+                </td>
+                    <td align="center" width="175px">
+              <center>
+                <span style="font-size:16px">Chaoyi Wu<sup>1,2</sup></span>
+                </center>
+              </td>
+                    <td align="center" width="175px">
+              <center>
+                <span style="font-size:16px">Ya Zhang</a><sup>1,2 </sup></span>
+                </center>            
+              </td>
+                  <td align="center" width="175px">
+              <center>
+                <span style="font-size:16px">Weidi Xie</a><sup>1,2 </sup></span>
+                </center>            
+              </td>
+                  <td align="center" width="225px">
+            <center>
+              <span style="font-size:16px">Yanfeng Wang</a><sup>1,2 <img class="round" style="width:20px" src="./resources/corresponding_fig.png"></sup></span>
+              </center>
+              </td>
+        </tr>
+        </tbody></table><br>
+  
+  <table align="center" width="700px">
+            <tbody><tr>
+                    <td align="center" width="50px">
+              <center>
+                    <span style="font-size:16px"></span>
+                </center>
+                </td>
+                    <td align="center" width="350px">
+              <center>
+                    <span style="font-size:16px"><sup>1</sup>Shanghai Artificial Intelligence Laboratory</span>
+                </center>
+                </td>
+                    <td align="center" width="350px">
+              <center>
+                    <span style="font-size:16px"><sup>2</sup>Shanghai Jiao Tong University</span>
+                </center>
+                </td>
+        </tr></tbody></table>
+
+   <br>
+  <!-- <table align=center width=500px>
+        <tr>
+          <td align=center width=500px>
+            <center>
+              <span style="font-size:22px">
+                <span style="font-size:20px">Under Review</span>
+              </span>
+            </center>
+          </td>
+        </tr>
+      </table> 
+  <br><hr> -->
+  <table align="center" width="750px">
+            <tbody><tr>
+              <td align="center" width="180px">
+                <center>
+                  <br>
+                  <span style="font-size:17px">Code
+                    <a href="https://github.com/MAGIC-AI4Med/KEP"> [GitHub]</a>
+                  </span>
+                </center>
+              </td>
+
+              <td align="center" width="180px">
+                <center>
+                  <br>
+                  <span style="font-size:17px">
+                    Paper <a href="https://arxiv.org/pdf/2404.09942"> [arXiv]</a>
+<!--                     Paper  -->
+                  </span>
+                </center>
+              </td>
+
+              <td align="center" width="180px">
+                <center>
+                  <br>
+                  <span style="font-size:17px">
+                    Cite <a href="./resources/bibtex.txt"> [BibTeX]</a>
+<!--                     Cite  -->
+                  </span>
+                </center>
+              </td>
+
+              <td align="center" width="210px">
+                <center>
+                  <br>
+                  <span style="font-size:17px">
+                    Models <a href="https://drive.google.com/drive/folders/1CUCE_m9yQuwdmAYxFnSi9W8LkCSGHCQ3"> [GoogleDrive]</a>
+                  </span>
+                </center>
+              </td>
+            </tr></tbody>
+      </table>
+  <!--
+      
+      
+        <p style="text-align:justify; text-justify:inter-ideograph;"><left>
+          <div class="container">
+        <div class="image" width="500px">
+          <center><p><img class="center" src="./resources/analysis.png" width="450px"></p></center>
+        </div>
+          <p style="text-align:justify; text-justify:inter-ideograph;"><left></left>
+          We present an innovative and <strong>automatic</strong> audio caption generation pipeline(<strong>*</strong>), construct a large-scale, high-quality, audio-language dataset, named as <strong>Auto-ACD</strong>, comprising over <strong>1.9M </strong> audio-text pairs. 
+          As shown in the left figure, The text descriptions in Auto-ACD contain <strong>long texts (18 words)</strong> and <strong>diverse vocabularies (23K)</strong>, and provide information about the <strong>surrounding auditory environment</strong>(data point with <strong>shadow</strong>) in which sounds take place.
+        </left></p>  
+      </div>
+      </left></p>
+      <hr>
+      <br>
+      -->
+      <br>
+      <hr>
+      <!-- <br> -->
+      <!-- <center> <h2> Motivation </h2> </center> -->
+      <!-- <p><img class="left" src="./resources/motivation.png" width="800px"></p>
+      <p style="text-align:justify; text-justify:inter-ideograph;"><left>
+        Motivation of Denoised Visual-language Pretraining in Pathology. 
+        Vanilla contrastive learning with random sampling image-text pairs suffers from noisy supervision signals caused by various magnifications on the image side and diverse granularities on the caption side. 
+        The noisy supervision exists in two ways: <i>(i)</i> <strong> explicit false negative</strong>, where multiple images are associated with the same caption; 
+        <i>(ii)</i> <strong> implicit false negative</strong>, where distinct pairs share identical semantics
+         </left></p>
+      
+      <br>
+      <hr>
+      <br> -->
+
+      <center><h2> Abstract </h2> </center>
+      <p style="text-align:justify; text-justify:inter-ideograph;">
+      </p><div class="container">
+        <div class="text" width="400px"> 
+          <p style="text-align:justify; text-justify:inter-ideograph;">
+            <left>
+              In this paper, we consider the problem of visual representation learning for computational pathology, by exploiting large-scale image-text pairs gathered from public resources, along with the domain-specific knowledge in pathology.
+              Specifically, we make the following contributions: (i) We curate a pathology knowledge tree that consists of 50,470 informative attributes for 4,718 diseases requiring pathology diagnosis from 32 human tissues. To our knowledge, this is the first comprehensive structured pathology knowledge base; (ii) We develop a knowledge-enhanced visual-language pretraining approach, where we first project pathology-specific knowledge into latent embedding space via a language model, and use it to guide the visual representation learning; (iii) We conduct thorough experiments to validate the effectiveness of our proposed components, demonstrating significant performance improvement on various downstream tasks, including cross-modal retrieval, zero-shot classification on pathology patches, and zero-shot tumor subtyping on whole slide images (WSIs).
+          </left></p>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      
+    
+     
+      <center> <h2> Method </h2> </center>
+      <p style="text-align:justify; text-justify:inter-ideograph;"><left>
+        <span class="bold"> Stage-I. Pathology Knowledge tree (PathKT) construction:</span>
+        <strong> a.</strong> We collect pathology-specific knowledge, including disease synonyms, definitions, histology and cytology descriptions from public educational resources, such as text books, professional websites, and structured databases, like UMLS and OncoTree. 
+        <strong> b.</strong> We structure these pathology knowledge into a knowledge tree by expanding the OncoTree. After deduplication and noise reduction, we finally get 50470 disease attributes from 4718 diseases involving human 32 tissues.
+        <p><img class="left" src="./resources/knowledge_tree.png" width="800px"></p>
+
+      </left></p>
+      <br>
+      <p style="text-align:justify; text-justify:inter-ideograph;"><left>
+        Stage-II. Pathology knowledge encoding:
+        <strong> we align different disease entities with their corresponding free-text attributes. Since a disease entity has a varying number of attributes, we adopt a metric learning based approach to encode this pathology knowledge, such that the synonyms, definitions, and corresponding histological/cytological features are close in the embedding space, while that of different diseases are pushed apart.
+        <p><img class="left" src="./resources/knowledge_encoding.png" width="800px"></p>
+
+      </left></p>
+      <br>
+      <p style="text-align:justify; text-justify:inter-ideograph;"><left>
+        Stage-III. Pathology knowledge enhanced pretraining:
+        we present a simple yet effective pretraining approach, termed KEP, that leverages the established knowledge encoder to guide visual-language pretraining for computational pathology. our goal here is to construct a visual-language embedding space, where the paired image-text have similar representations. Specifically, the weights of the pretrained knowledge encoder are firstly used to initialize the text encoder. And then, to keep the alignment between images and free-form captions inside the knowledge space and thus the images can be linked to their implicit disease entities, we adopt an additional frozen branch to continuously distill pathology knowledge to the text encoder. 
+        <p><img class="left" src="./resources/VLP.png" width="800px"></p>
+
+      </left></p>
+
+      
+      <br>
+      <hr>
+      <br>
+      
+      <center><h2>Experimental Results</h2></center>
+      <p style="text-align:justify; text-justify:inter-ideograph;"><left>
+        Task-I. Retrieval:
+        For the cross-modal retrieval task, we test our models on three datasets. The experimental results are shown in the following table, KEP-32 and KEP-16 denote different variants of our approach with different visual encoders. It can be seen that, our model KEP-32 outperforms PLIP and QuiltNet on almost all datasets. KEP-16 further improves the cross-modal retrieval performance by a large margin.
+        <p><img class="left" src="./resources/cross-modal-retrieval.png" width="800px"></p>
+
+      </left></p>
+      <br>
+      <p style="text-align:justify; text-justify:inter-ideograph;"><left>
+        Task-II. Zero-shot Patch Classification:
+        <strong> We evaluate the performance of different models on patchlevel pathology images from 8 datasets. This figure reports the performance distribution, where each point denotes the performance of one single text prompt. It can be seen that our approach KEP-32 and KEP-16 achieve better zero-shot classification performance than PLIP and QuiltNet on all datasets except for LC25000. To validate the robustness of our text encoders towards different text prompts, we visualize the embeddings of different class prompts. It can be seen that, compared to PLIP and QuiltNet, the text encoder of KEP-32 generates well-separated prompt embeddings of different classes.
+        <p><img class="left" src="./resources/patch_classification.png" width="800px"></p>
+        <p><img class="left" src="./resources/visualize_embedding.png" width="800px"></p>
+
+      </left></p>
+      <br>
+      <p style="text-align:justify; text-justify:inter-ideograph;"><left>
+        Task-III. Zero-shot tumor subtyping on WSIs:
+        We evaluate the transfer ability of different models for tumor subtyping on common and rare cancers. the performance comparison of tumor subtyping on common cancers, including TCGA-BRCA (common), TCGA-NSCLC and TCGA-RCC WSIs. It can be seen that KEP-16 outperforms PLIP and QuiltNet on all WSI datasets. KEP-CTP achieves better or comparable performance than MI-Zero-Bio and MI-Zero-Pub, which use in-house data for pretraining. For rare cancers, we evaluate the performance on six BRCA subtypes, including 2common and 4 rare cancers. The experimental results are shown in the following table. It can be seen that our method KEP-16 pretrained on OpenPath outperforms PLIP and QuiltNet by a large margin on both common and rare breast cancers.
+        <p><img class="left" src="./resources/WSI_subtyping.png" width="800px"></p>
+        <p><img class="left" src="./resources/rare_disease.png" width="800px"></p>
+
+      </left></p>
+
+
+      <!-- <center><h2>Protocol-IV: Ablation Study</h2></center>
+      <p style="text-align:justify; text-justify:inter-ideograph;"><left>
+        Ablation results of our approach. The performance of zero-shot patch classification is presented by average weighted F1 across all text prompts, and the performance of image-to-text retrieval in Arch-PubMed and WebPath datasets is exhibited. 
+      </left></p>
+        <p><img class="center" src="./resources/ablation.png" width="800px"></p>
+   -->
+
+      <br>
+      <hr>
+      <center> <h2> Acknowledgements </h2> </center>
+      <p> 
+        Based on a template by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a>.
+      </p>
+      <br>
+<br>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

@@ -1,0 +1,6 @@
+@article{zhou2024knowledge,
+  title={Knowledge-enhanced Visual-Language Pretraining for Computational Pathology},
+  author={Zhou, Xiao and Zhang, Xiaoman and Wu, Chaoyi and Zhang, Ya and Xie, Weidi and Wang, Yanfeng},
+  journal={arXiv preprint arXiv:2404.09942},
+  year={2024}
+}
